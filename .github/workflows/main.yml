@@ -15,3 +15,4 @@ jobs:
         username: root
         password: ${{ secrets.ftp_password_WEAMA }}
         port: 22
+        server-dir: /var/www/
