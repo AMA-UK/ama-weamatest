@@ -15,5 +15,5 @@ jobs:
         username: root
         password: ${{ secrets.ftp_password_WEAMA }}
 
-        local_path: ./* # default is ./*
+        server-dir: ./* # default is ./*
         remote_path: /var/www
