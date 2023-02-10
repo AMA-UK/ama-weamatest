@@ -11,6 +11,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
-        server: sftp://159.65.214.179
+        server: 159.65.214.179
         username: root
         password: ${{ secrets.ftp_password_WEAMA }}
