@@ -1,19 +1,15 @@
-on: push
-name: 🚀 Deploy website on push
+
+name: FTP Test
+on:
+  push:
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  ci:
     runs-on: ubuntu-latest
-   permissions:
-      issues: write
-      pull-requests: write
-   steps:
-    - uses: actions/stale@v5   
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
-      with:
-        server: 159.65.214.179
-        username: root
-        password: ${{ secrets.ftp_password_WEAMA }}
-        port: 22
-        server-dir: /var/www/
+    steps:
+      - uses: actions/checkout@v2
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.ftp_password_WEAMA }}
