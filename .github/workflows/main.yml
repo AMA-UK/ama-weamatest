@@ -10,11 +10,8 @@ jobs:
     
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
-      env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.ftp_password_WEAMA }}
-          LOCAL_DIR: build
-          METHOD: sftp
-          PORT: 22
-          ARGS: --delete
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.ftp_password_WEAMA }}
+        port: 22
