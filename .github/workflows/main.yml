@@ -7,9 +7,6 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
-    - run: echo "${{ secrets.FTP_SERVER }}"
-    - run: echo "${{ secrets.FTP_USERNAME }}"
-    - run: echo "${{ secrets.ftp_password_WEAMA }}"
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
